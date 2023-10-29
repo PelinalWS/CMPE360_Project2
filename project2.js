@@ -1,4 +1,3 @@
-// author: Batuhan İşcan
 // TO DO 1: Provides a 3x3 transformation matrix represented as an array containing 9 values arranged in column-major sequence.
 // Initially, the transformation employs scaling, followed by rotation, and ultimately, translation.
 // The specified rotation measurement is in degrees.
