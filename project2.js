@@ -11,10 +11,10 @@ function GetTransform(positionX, positionY, rotation, scale) {
                  0, 1, -positionY,
                  0, 0,      1
                 ];
-    const rm = [scale * cos,         -sin, 0,
-                        sin,  scale * cos, 0,
+    const rm = [scale * cos, -scale * sin, 0,
+                scale * sin,  scale * cos, 0,
                           0,            0, 1
-                    ];
+                ];
     const t2m = [1, 0, positionX,
                  0, 1, positionY,
                  0, 0,      1
@@ -31,7 +31,7 @@ function GetTransform(positionX, positionY, rotation, scale) {
 function ApplyTransform(trans1, trans2) {
     const t1 = horizontally_index(trans1);
     const t2 = horizontally_index(trans2);
-    const augh = multi3x3(t2, t1);
+    const augh = multi3x3(t1, t2);
     const augv = vertically_index(augh);
     return augv;
 }
