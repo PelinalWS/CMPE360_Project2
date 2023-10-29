@@ -6,13 +6,12 @@ function GetTransform(positionX, positionY, rotation, scale) {
     const cos = Math.cos(rad_rotation), sin = Math.sin(rad_rotation);
     
     const m = [
-                [scale * cos,     scale * sin   , positionX],
-                [    -sin * scale   ,scale * cos, positionY],
-                [      0    ,      0    ,     1     ]
+                 scale * cos, scale * sin, positionX,
+                -scale * sin, scale * cos, positionY,
+                       0    ,       0    ,     1    
             ];
-    
-    const matrix = [m[0][0], m[1][0], m[2][0], m[0][1], m[1][1], m[2][1], m[0][2], m[1][2], m[2][2]];
-    
+
+    const matrix = [m[0], m[3], m[6], m[1], m[4], m[7], m[2], m[5], m[8]];
     return matrix;
 }
 
